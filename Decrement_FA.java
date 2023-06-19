@@ -10,7 +10,7 @@ public class Decrement_FA {
         String[][] transitionTable = new String[4][3];
 
         transitionTable[0][0] = "q2";
-        transitionTable[0][1] = "q4";
+        transitionTable[0][1] = "q1";
         transitionTable[0][2] = "err";
 
         transitionTable[1][0] = "q3";
@@ -32,7 +32,7 @@ public class Decrement_FA {
         while(!state.equalsIgnoreCase("acc")){
             symbol = word[i];
             if(symbol == '-'){
-                input = "<";
+                input = "-";
             } else if (symbol == '@') {
                 input = "EOS";
             } else if(symbol != '-') {
@@ -66,5 +66,6 @@ public class Decrement_FA {
         System.out.println(valid_decrement("-"));                                   //return false
         System.out.println(valid_decrement("=-"));                                   //return false
         System.out.println(valid_decrement("-="));                                   //return false
+        System.out.println(valid_decrement("i--"));                                 //return true
     }
 }
