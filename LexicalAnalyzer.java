@@ -35,9 +35,9 @@ public class LexicalAnalyzer {
             return "9";
         } else if (SubtractionAssignment_FA.valid_minusEquals(word)) {
             return "10";
-        } else if (RB_FA.valid_RB(word)) {
-            return "11";
         } else if (LB_FA.valid_LB(word)) {
+            return "11";
+        } else if (RB_FA.valid_RB(word)) {
             return "12";
         } else if (CLB_FA.valid_CLB(word)) {
             return "13";
@@ -54,5 +54,9 @@ public class LexicalAnalyzer {
         } else {
             return "error";
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.print(getLexic("int"));
     }
 }

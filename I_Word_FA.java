@@ -59,6 +59,6 @@ public class I_Word_FA {
 
     public static void main(String[] args) {
         System.out.println(valid_I_Word("i"));                                   //return true
-        System.out.println(valid_I_Word("I"));                                   //return false
+        System.out.println(valid_I_Word("("));                                   //return false
     }
 }

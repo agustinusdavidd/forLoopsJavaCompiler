@@ -59,6 +59,6 @@ public class K_Word_FA {
 
     public static void main(String[] args) {
         System.out.println(valid_K_Word("k"));                                   //return true
-        System.out.println(valid_K_Word("K"));                                   //return false
+        System.out.println(valid_K_Word("("));                                   //return false
     }
 }

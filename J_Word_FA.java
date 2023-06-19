@@ -59,6 +59,6 @@ public class J_Word_FA {
 
     public static void main(String[] args) {
         System.out.println(valid_J_Word("j"));                                   //return true
-        System.out.println(valid_J_Word("J"));                                   //return false
+        System.out.println(valid_J_Word(")"));                                   //return false
     }
 }
