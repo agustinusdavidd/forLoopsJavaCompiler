@@ -1,6 +1,17 @@
 public class LexicalAnalyzer {
     public static String[] doLA(String sentence) {
-        String hasil[] = new String[];
+        String hasil[] = new String[100000];
+
+        String[] input = sentence.split("\\s+");
+
+        int i = 0;
+        for (String w: input) {
+            hasil[i] = getLexic(w);
+            i++;
+        }
+        hasil[i] = "@";
+
+        return hasil;
     }
 
     public static String getLexic(String word) {
@@ -24,22 +35,24 @@ public class LexicalAnalyzer {
             return "9";
         } else if (SubtractionAssignment_FA.valid_minusEquals(word)) {
             return "10";
-        } else if () {
+        } else if (RB_FA.valid_RB(word)) {
             return "11";
-        } else if () {
+        } else if (LB_FA.valid_LB(word)) {
             return "12";
-        } else if () {
+        } else if (CLB_FA.valid_CLB(word)) {
             return "13";
-        } else if () {
+        } else if (CRB_FA.valid_CRB(word)) {
             return "14";
-        } else if () {
+        } else if (Delimiter_FA.valid_Delimiter(word)) {
             return "15";
         } else if (For_FA.valid_for(word)) {
             return "16";
-        } else if () {
+        } else if (Constant_FA.valid_LB(word)) {
             return "17";
         } else if (Int_FA.valid_int(word)) {
             return "18";
+        } else {
+            return "error";
         }
     }
 }
