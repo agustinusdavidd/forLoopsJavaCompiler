@@ -1,5 +1,5 @@
 public class Increment_FA {
-    public static boolean valid_lessEquals(String str) {
+    public static boolean valid_increment(String str) {
         str += "@";
         char[] word = str.toCharArray();
 
@@ -62,9 +62,9 @@ public class Increment_FA {
     }
 
     public static void main(String[] args) {
-        System.out.println(valid_lessEquals("++"));                                   //return true
-        System.out.println(valid_lessEquals("+"));                                   //return false
-        System.out.println(valid_lessEquals("=+"));                                   //return false
-        System.out.println(valid_lessEquals("+="));                                   //return false
+        System.out.println(valid_increment("++"));                                   //return true
+        System.out.println(valid_increment("+"));                                   //return false
+        System.out.println(valid_increment("=+"));                                   //return false
+        System.out.println(valid_increment("+="));                                   //return false
     }
 }

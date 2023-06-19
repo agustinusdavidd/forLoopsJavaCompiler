@@ -1,11 +1,11 @@
-public class MinusEquals_FA {
-    public static boolean valid_lessEquals(String str) {
+public class AdditionAssignment_FA {
+    public static boolean valid_plusEquals(String str) {
         str += "@";
         char[] word = str.toCharArray();
 
         String state = "q1";
         String[] baris = new String[] {"q1", "q2", "q3", "q4"};
-        String[] kolom = new String[] {"-", "=", "selain -=", "EOS"};
+        String[] kolom = new String[] {"+", "=", "selain +=", "EOS"};
 
         String[][] transitionTable = new String[4][4];
 
@@ -35,14 +35,14 @@ public class MinusEquals_FA {
         int b = 0, k = 0;                                                       //baris dan kolom
         while(!state.equalsIgnoreCase("acc")){
             symbol = word[i];
-            if(symbol == '-'){
-                input = "-";
+            if(symbol == '+'){
+                input = "+";
             } else if (symbol == '=') {
                 input = "=";
             } else if (symbol == '@') {
                 input = "EOS";
-            } else if(symbol != '-' && symbol != '=') {
-                input = "selain -=";
+            } else if(symbol != '+' && symbol != '=') {
+                input = "selain +=";
             } else {
                 return false;
             }
@@ -68,9 +68,9 @@ public class MinusEquals_FA {
     }
 
     public static void main(String[] args) {
-        System.out.println(valid_lessEquals("-="));                                   //return true
-        System.out.println(valid_lessEquals("--"));                                   //return false
-        System.out.println(valid_lessEquals("="));                                   //return false
-        System.out.println(valid_lessEquals("-"));                                   //return false
+        System.out.println(valid_plusEquals("+="));                                   //return true
+        System.out.println(valid_plusEquals("++"));                                   //return false
+        System.out.println(valid_plusEquals("="));                                   //return false
+        System.out.println(valid_plusEquals("+"));                                   //return false
     }
 }

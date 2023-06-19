@@ -1,5 +1,5 @@
 public class Decrement_FA {
-    public static boolean valid_lessEquals(String str) {
+    public static boolean valid_decrement(String str) {
         str += "@";
         char[] word = str.toCharArray();
 
@@ -62,9 +62,9 @@ public class Decrement_FA {
     }
 
     public static void main(String[] args) {
-        System.out.println(valid_lessEquals("--"));                                   //return true
-        System.out.println(valid_lessEquals("-"));                                   //return false
-        System.out.println(valid_lessEquals("=-"));                                   //return false
-        System.out.println(valid_lessEquals("-="));                                   //return false
+        System.out.println(valid_decrement("--"));                                   //return true
+        System.out.println(valid_decrement("-"));                                   //return false
+        System.out.println(valid_decrement("=-"));                                   //return false
+        System.out.println(valid_decrement("-="));                                   //return false
     }
 }
