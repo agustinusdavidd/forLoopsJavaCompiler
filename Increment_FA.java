@@ -32,7 +32,7 @@ public class Increment_FA {
         while(!state.equalsIgnoreCase("acc")){
             symbol = word[i];
             if(symbol == '+'){
-                input = "<";
+                input = "+";
             } else if (symbol == '@') {
                 input = "EOS";
             } else if(symbol != '+') {

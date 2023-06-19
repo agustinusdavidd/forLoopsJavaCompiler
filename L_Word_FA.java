@@ -5,7 +5,7 @@ public class L_Word_FA {
 
         String state = "q1";
         String[] baris = new String[] {"q1", "q2", "q3"};
-        String[] kolom = new String[] {"j", "selain j", "EOS"};
+        String[] kolom = new String[] {"l", "selain l", "EOS"};
 
         String[][] transitionTable = new String[3][3];
 
