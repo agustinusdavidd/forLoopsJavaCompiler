@@ -10,7 +10,7 @@ public class Increment_FA {
         String[][] transitionTable = new String[4][3];
 
         transitionTable[0][0] = "q2";
-        transitionTable[0][1] = "q4";
+        transitionTable[0][1] = "q1";
         transitionTable[0][2] = "err";
 
         transitionTable[1][0] = "q3";
