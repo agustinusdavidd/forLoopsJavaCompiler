@@ -84,6 +84,8 @@ public class LL1Parser {
                         myStack.push("2");
                         myStack.push("V");
                         myStack.push("18");
+                    } else if (symbol1.equalsIgnoreCase("15")) {
+                        myStack.pop();
                     } else {
                         return false;
                     }
@@ -158,27 +160,11 @@ public class LL1Parser {
                         myStack.push("N");
                         myStack.push("M");
                         myStack.push("V");
-                    } else {
-                        return false;
-                    }
-/*                } else if (top.equalsIgnoreCase("V")) {
-                    if (symbol1.equalsIgnoreCase("1")) {
+                    } else if (symbol1.equalsIgnoreCase("15")) {
                         myStack.pop();
-                        myStack.push("1");
-                    } else {
+                    } else  {
                         return false;
                     }
-                }else if (top.equalsIgnoreCase("1")) {
-                    if (!symbol1.equalsIgnoreCase("1")) {
-                        return false;
-                    } else {
-                        peek = (String) myStack.peek();
-                        if (peek.equalsIgnoreCase("1")) {
-                            myStack.pop();
-                            i++;
-                            symbol1 = word[i];
-                        }
-                    }*/
                 } else if (top.equalsIgnoreCase("M")) {
                     if (symbol1.equalsIgnoreCase("3")){
                         myStack.pop();
@@ -268,7 +254,9 @@ public class LL1Parser {
                     } else if(symbol1.equalsIgnoreCase("8")) {
                         myStack.pop();
                         myStack.push("8");
-                    } else {
+                    } else if (symbol1.equalsIgnoreCase("12")) {
+                        myStack.pop();
+                    } else  {
                         return false;
                     }
                 } else if (top.equalsIgnoreCase("7")) {
