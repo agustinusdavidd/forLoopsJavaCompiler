@@ -4,11 +4,11 @@ public class LL1Parser {
     public static boolean valid(String[] word) {
         
         int j = 0;
-        while (!word[j].equalsIgnoreCase("err") && !word[j].equalsIgnoreCase("@")){
+        while (!word[j].equalsIgnoreCase("error") && !word[j].equalsIgnoreCase("@")){
             j++;
             //System.out.println("first loop woow");
         }
-        if (word[j].equalsIgnoreCase("err")){
+        if (word[j].equalsIgnoreCase("error")){
             return false;   
         } else {
             String state;
@@ -256,6 +256,11 @@ public class LL1Parser {
                         myStack.push("8");
                     } else if (symbol1.equalsIgnoreCase("12")) {
                         myStack.pop();
+                    } else if (symbol1.equalsIgnoreCase("1")) {
+                        myStack.pop();
+                        myStack.push("N");
+                        myStack.push("I");
+                        myStack.push("1");
                     } else  {
                         return false;
                     }
@@ -326,13 +331,51 @@ public class LL1Parser {
                         myStack.push("S");
                     } else if (symbol1.equalsIgnoreCase("14")) {
                         myStack.pop();
+                    } else {
+                        return false;
+                    }
+                } else if (top.equalsIgnoreCase("I")) {
+                    if (symbol1.equalsIgnoreCase("10")) {
+                        myStack.pop();
+                        myStack.push("10");
+                    } else if (symbol1.equalsIgnoreCase("9")) {
+                        myStack.pop();
+                        myStack.push("9");
+                    } else {
+                        return false;
+                    }
+                } else if (top.equalsIgnoreCase("10")) {
+                    if (!symbol1.equalsIgnoreCase("10")) {
+                        return false;
+                    } else {
+                        peek = (String) myStack.peek();
+                        if (peek.equalsIgnoreCase("10")){
+                            myStack.pop();
+                            i++;
+                            symbol1 = word[i];
+                        }
+                    }
+                } else if (top.equalsIgnoreCase("9")) {
+                    if (!symbol1.equalsIgnoreCase("9")) {
+                        return false;
+                    } else {
+                        peek = (String) myStack.peek();
+                        if (peek.equalsIgnoreCase("9")){
+                            myStack.pop();
+                            i++;
+                            symbol1 = word[i];
+                        }
                     }
                 }
                 //System.out.println(myStack);
                 //System.out.println(symbol1);
                 top = (String) myStack.peek();
             }
-            return true;
+            if (symbol1.equalsIgnoreCase("@")) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 }
