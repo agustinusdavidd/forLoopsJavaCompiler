@@ -2,12 +2,13 @@ import java.util.Stack;
 
 public class LL1Parser {
     public static boolean valid(String[] word) {
+        
         int j = 0;
         while (!word[j].equalsIgnoreCase("err") && !word[j].equalsIgnoreCase("@")){
             j++;
         }
         if (word[j].equalsIgnoreCase("err")){
-            return false;
+            return false;   
         } else {
             String state;
             Stack myStack = new Stack();
@@ -159,7 +160,7 @@ public class LL1Parser {
                     } else {
                         return false;
                     }
-                } else if (top.equalsIgnoreCase("V")) {
+/*                } else if (top.equalsIgnoreCase("V")) {
                     if (symbol1.equalsIgnoreCase("1")) {
                         myStack.pop();
                         myStack.push("1");
@@ -176,7 +177,7 @@ public class LL1Parser {
                             i++;
                             symbol1 = word[i];
                         }
-                    }
+                    }*/
                 } else if (top.equalsIgnoreCase("M")) {
                     if (symbol1.equalsIgnoreCase("3")){
                         myStack.pop();
@@ -237,9 +238,6 @@ public class LL1Parser {
                             symbol1 = word[i];
                         }
                     }
-                } else if (top.equalsIgnoreCase("N")){
-                    myStack.pop();
-                    myStack.push("17");
                 } else if (top.equalsIgnoreCase("17")) {
                     if (!symbol1.equalsIgnoreCase("17")) {
                         return false;
@@ -333,8 +331,16 @@ public class LL1Parser {
                             symbol1 = word[i];
                         }
                     }
-                } else if
+                } else if (top.equalsIgnoreCase("T")) {
+                    if (symbol1.equalsIgnoreCase("for")) {
+                        myStack.pop();
+                        myStack.push("S");
+                    } else if (symbol1.equalsIgnoreCase("14")) {
+                        myStack.pop();
+                    }
+                }
             }
+            return true;
         }
     }
 }
