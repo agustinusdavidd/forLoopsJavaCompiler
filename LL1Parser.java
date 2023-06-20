@@ -6,7 +6,7 @@ public class LL1Parser {
         int j = 0;
         while (!word[j].equalsIgnoreCase("err") && !word[j].equalsIgnoreCase("@")){
             j++;
-            System.out.println("it stuck");
+            //System.out.println("first loop woow");
         }
         if (word[j].equalsIgnoreCase("err")){
             return false;   
@@ -188,10 +188,10 @@ public class LL1Parser {
                         myStack.push("4");
                     } else if (symbol1.equalsIgnoreCase("5")) {
                         myStack.pop();
-                        myStack.push(5);
+                        myStack.push("5");
                     } else if (symbol1.equalsIgnoreCase("6")) {
                         myStack.pop();
-                        myStack.push(6);
+                        myStack.push("6");
                     } else {
                         return false;
                     }
@@ -333,14 +333,16 @@ public class LL1Parser {
                         }
                     }
                 } else if (top.equalsIgnoreCase("T")) {
-                    if (symbol1.equalsIgnoreCase("for")) {
+                    if (symbol1.equalsIgnoreCase("16")) {
                         myStack.pop();
                         myStack.push("S");
                     } else if (symbol1.equalsIgnoreCase("14")) {
                         myStack.pop();
                     }
                 }
-                System.out.println(myStack);
+                //System.out.println(myStack);
+                //System.out.println(symbol1);
+                top = (String) myStack.peek();
             }
             return true;
         }
