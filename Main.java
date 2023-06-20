@@ -6,7 +6,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String sentence = sc.nextLine();
         String[] lexes = LexicalAnalyzer.doLA(sentence);
-        
+
         int i = 0;
         while(!lexes[i].equalsIgnoreCase("err") && !lexes[i].equalsIgnoreCase("@")) {
             System.out.print(lexes[i] + " ");
@@ -17,6 +17,10 @@ public class Main {
             i++;
         }
         System.out.println();
-        System.out.print(LL1Parser.valid(lexes));
+        if (LL1Parser.valid(lexes)) {
+            System.out.println("Valid");
+        } else {
+            System.out.println("Invalid");
+        }
     }
 }
