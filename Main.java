@@ -16,6 +16,6 @@ public class Main {
             System.out.print(lexes[i] + " ");
             i++;
         }
-        System.out.println();
+        System.out.println(LL1Parser.valid(lexes));
     }
 }

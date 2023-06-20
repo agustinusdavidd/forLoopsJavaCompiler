@@ -6,6 +6,7 @@ public class LL1Parser {
         int j = 0;
         while (!word[j].equalsIgnoreCase("err") && !word[j].equalsIgnoreCase("@")){
             j++;
+            System.out.println("it stuck");
         }
         if (word[j].equalsIgnoreCase("err")){
             return false;   
@@ -339,6 +340,7 @@ public class LL1Parser {
                         myStack.pop();
                     }
                 }
+                System.out.println(myStack);
             }
             return true;
         }
