@@ -32,10 +32,10 @@ for ( ; ; ) { }
 4. l
 
 ## Daftar operator yang diterima
-1. <=
-2. >=
-3. <
-4. >
+1. `<=`
+2. `>=`
+3. `<`
+4. `>`
 
 ## Daftar incement/decrement yang diterima
 1. i++
